@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  backend:
+    image: ${DOCKER_REGISTRY-}geopharmtestttt
+    build:
+      context: .
+      dockerfile: C:\Users\User\Desktop\test ex\Geopharm-testttt\Dockerfile
+  client:
+    image: client
+    build: 
+      context: ./geopharm-client
+      dockerfile: Dockerfile
+    networks:
+      - my-net
+
+networks:
+  my-net:
